@@ -10,6 +10,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>onrobot_rg_modbus_tcp</exec_depend>
   <exec_depend>onrobot_vg_modbus_tcp</exec_depend>
+  <exec_depend>onrobot_mg_modbus_tcp</exec_depend>
   <exec_depend>onrobot_rg_control</exec_depend>
   <exec_depend>onrobot_vg_control</exec_depend>
+  <exec_depend>onrobot_mg_control</exec_depend>
 </package>

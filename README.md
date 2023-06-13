@@ -11,6 +11,7 @@ This repository was inspired by [ros-industrial/robotiq](https://github.com/ros-
 - ROS Noetic (Python3)
 - Controller for OnRobot RG2 / RG6 via Modbus/TCP
 - Controller for OnRobot VG10 / VGC10 via Modbus/TCP
+- Controller for OnRobot MG10 via Modbus/TCP
 
 ## Dependency
 
@@ -97,6 +98,30 @@ rosservice call /onrobot_vg/set_command '!!str 128'
 roslaunch onrobot_vg_description disp_vgc10_1cup_model.launch
 roslaunch onrobot_vg_description disp_vgc10_4cups_model.launch
 roslaunch onrobot_vg_description disp_vg10_model.launch
+```
+
+### MG10
+
+#### Send motion commands
+##### Interactive mode
+```
+roslaunch onrobot_mg_control bringup.launch ip:=YYY.YYY.YYY.YYY
+rosrun onrobot_mg_control OnRobotMGSimpleController.py  
+```
+
+##### ROS service call
+```
+roslaunch onrobot_mg_control bringup.launch ip:=YYY.YYY.YYY.YYY
+rosrun onrobot_mg_control OnRobotMGSimpleControllerServer.py  
+rosservice call /onrobot_mg/set_command g
+rosservice call /onrobot_mg/set_command r
+rosservice call /onrobot_mg/set_command '!!str 50'
+```
+
+#### Simulation
+##### Display models
+```
+roslaunch onrobot_mg_description disp_mg10_model.launch
 ```
 
 ## Author
